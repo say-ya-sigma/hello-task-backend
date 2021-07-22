@@ -1,4 +1,4 @@
-module github.com/say-ya-sigma/hello_task/backend
+module github.com/say-ya-sigma/hello-task-backend
 
 go 1.16
 

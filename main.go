@@ -2,14 +2,14 @@ package main
 import (
 	"golang.org/x/xerrors"
 	"github.com/gin-gonic/gin"
-	cont "github.com/say-ya-sigma/hello_task/backend/controller"
-	repo "github.com/say-ya-sigma/hello_task/backend/repository"
+	cont "github.com/say-ya-sigma/hello-task-backend/controller"
+	db "github.com/say-ya-sigma/hello-task-backend/repository/database"
 )
 
 func main() {
 	router := gin.Default()
 	hello := cont.CreateHello()
-	_ = repo.GetMongoConn()
+	_ = db.GetMongoConn()
 	router.GET("/", func(ctx *gin.Context) {
 		body, err := hello.Get(ctx)
 		if err != nil {
